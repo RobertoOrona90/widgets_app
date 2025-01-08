@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_app/presentation/cards/cards_screen.dart';
+import 'package:widgets_app/presentation/screens/buttons/buttons_screen.dart';
+import 'package:widgets_app/presentation/screens/home_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,13 +12,14 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+      home: const HomeScreen(),
+      routes: {
+        '/buttons': (context) => ButtonsScreen(),
+        '/cards': (context) => CardsScreen(),
+      },
+
     );
   }
 }
